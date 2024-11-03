@@ -6,7 +6,9 @@ from ..models import models, schemas
 def create(db: Session, recipe):
     # Create a new instance of the recipe model with the provided data
     db_recipe = models.Recipe(
-        amount = recipe.amount
+        amount = recipe.amount,
+        sandwich_id=recipe.sandwich_id,
+        resource_id=recipe.resource_id
     )
     # Add the newly created recipe object to the database session
     db.add(db_recipe)
